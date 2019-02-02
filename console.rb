@@ -60,7 +60,10 @@ ticket_1.save
 ticket_2.save
 ticket_3.save
 
-
+film_3.title = "Norbit"
+film_3.update
+customer_2.name = "Dave"
+customer_2.update
 
 binding.pry
 nil
