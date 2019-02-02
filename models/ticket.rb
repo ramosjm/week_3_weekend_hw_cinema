@@ -7,9 +7,9 @@ class Ticket
   attr_reader :id
 
   def initialize(ticket)
-    @id = ticket['id'] if ticket['id']
-    @customer_id = ticket['customer_id']
-    @film_id = ticket['film_id']
+    @id = ticket['id'].to_i if ticket['id']
+    @customer_id = ticket['customer_id'].to_i
+    @film_id = ticket['film_id'].to_i
   end
 
 

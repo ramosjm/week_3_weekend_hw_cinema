@@ -6,9 +6,9 @@ class Film
   attr_reader :id
 
   def initialize(film)
-    @id = film['id'] if film['id']
+    @id = film['id'].to_i if film['id']
     @title = film['title']
-    @price = film['price']
+    @price = film['price'].to_i
   end
 
 end
