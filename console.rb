@@ -61,9 +61,21 @@ ticket_3 = Ticket.new({
   'film_id' => film_3.id
   })
 
+ticket_4 = Ticket.new({
+  'customer_id' => customer_1.id,
+  'film_id' => film_1.id
+  })
+
+ticket_5 = Ticket.new({
+  'customer_id' => customer_1.id,
+  'film_id' => film_1.id
+  })
+
 ticket_1.save
 ticket_2.save
 ticket_3.save
+ticket_4.save
+ticket_5.save
 
 film_3.title = "Norbit"
 film_3.update
