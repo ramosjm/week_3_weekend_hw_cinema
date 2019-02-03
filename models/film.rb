@@ -11,6 +11,13 @@ class Film
     @price = film['price'].to_i
   end
 
+  def customer()
+    sql = "SELECT customers.* FROM customers INNER JOIN tickets ON customers.id = tickets.customer_id WHERE tickets.film_id = $1"
+    values = [@id]
+    customers = SqlRunner.run(sql,values)
+    return customers.map{|customer|Customer.new(customer)}
+  end
+
   def save()
     sql = "INSERT INTO films (title, price) VALUES ($1,$2) RETURNING id"
     values = [@title,@price]
@@ -35,7 +42,7 @@ class Film
     films = SqlRunner.run(sql)
     return films.map{|film|Film.new(film)}
   end
-  
+
   def self.delete_all()
     sql = "DELETE FROM films"
     SqlRunner.run(sql)
