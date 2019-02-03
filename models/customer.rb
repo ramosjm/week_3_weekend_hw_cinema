@@ -11,10 +11,10 @@ class Customer
     @funds = customer['funds'].to_i
   end
 
-  def reduce_funds(customer,film)
-    customer.funds -= film.price
-    p customer.funds
-  end
+  # def reduce_funds(film)
+  #   @funds -= film.price
+  #   p customer.funds
+  # end
 
   def ticket_count()
     sql = "SELECT tickets.* FROM tickets INNER JOIN customers ON tickets.customer_id = customers.id WHERE tickets.customer_id = $1"
