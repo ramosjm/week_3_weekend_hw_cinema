@@ -12,7 +12,7 @@ class Film
   end
 
   def customer_count()
-    sql = "SELECT tickets.* FROM tickets INNER JOIN films ON tickets.film_id = film.id WHERE tickets.film_id = $1"
+    sql = "SELECT tickets.* FROM tickets INNER JOIN films ON tickets.film_id = films.id WHERE tickets.film_id = $1"
     values = [@id]
     tickets = SqlRunner.run(sql,values)
     return tickets.count
