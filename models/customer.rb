@@ -11,6 +11,18 @@ class Customer
     @funds = customer['funds'].to_i
   end
 
+  def reduce_funds(customer,film)
+    customer.funds -= film.price
+    p customer.funds
+  end
+
+  def ticket_count()
+    sql = "SELECT tickets.* FROM tickets INNER JOIN customers ON tickets.customer_id = customers.id WHERE tickets.customer_id = $1"
+    values = [@id]
+    tickets = SqlRunner.run(sql,values)
+    return tickets.count
+  end
+
   def films() #All films for a customer
     sql = "SELECT films.* FROM films INNER JOIN tickets ON films.id = tickets.film_id WHERE tickets.customer_id = $1"
     values = [@id]
