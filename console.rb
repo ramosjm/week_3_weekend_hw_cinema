@@ -62,9 +62,7 @@ screening_3 = Screening.new({
   'screening_time' => '15:00'
   })
 
-screening_1.save
-screening_2.save
-screening_3.save
+
 
 ticket_1 = Ticket.new({
   'customer_id' => customer_1.id,
@@ -101,6 +99,10 @@ film_3.title = "Norbit"
 film_3.update
 customer_2.name = "Dave"
 customer_2.update
+
+screening_1.save
+screening_2.save
+screening_3.save
 
 binding.pry
 nil

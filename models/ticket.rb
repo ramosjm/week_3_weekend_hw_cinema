@@ -1,6 +1,5 @@
 require_relative('../db/sql_runner.rb')
 
-
 class Ticket
 
   attr_accessor :customer_id, :film_id
